@@ -1,0 +1,43 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Build backend
+        run: |
+          cd backend
+          mvn clean package -DskipTests
+
+      - name: Build & Push Backend Image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/backend-task-manager .
+          docker push ${{ secrets.DOCKER_USERNAME }}/backend-task-manager
+
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Frontend
+        run: |
+          cd frontend
+          npm install
+          npm run build
+
+      - name: Build & Push Frontend Image
+        run: |
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend-task-manager .
+          docker push ${{ secrets.DOCKER_USERNAME }}/frontend-task-manager
