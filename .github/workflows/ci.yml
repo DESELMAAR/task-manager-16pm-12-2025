@@ -46,6 +46,7 @@ jobs:
 
       - name: Build & Push Frontend Image
         run: |
+          cd frontend
           docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend-task-manager .
           docker push ${{ secrets.DOCKER_USERNAME }}/frontend-task-manager
 
