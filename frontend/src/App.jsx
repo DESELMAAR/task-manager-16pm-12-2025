@@ -57,11 +57,11 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    background: "linear-gradient(135deg, #3a0658ff, #0f1325ff)",
+    background: "linear-gradient(135deg, #1e082bff, #0f1325ff)",
     fontFamily: "Arial, sans-serif"
   },
   card: {
-    background: "#081d3bff",
+    background: "#112744ff",
     padding: "2rem",
     borderRadius: "0",
     width: "100%",
