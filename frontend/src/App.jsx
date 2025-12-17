@@ -57,13 +57,13 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    background: "linear-gradient(135deg, #667eea, #764ba2)",
+    background: "linear-gradient(135deg, #3a0658ff, #0f1325ff)",
     fontFamily: "Arial, sans-serif"
   },
   card: {
-    background: "#fff",
+    background: "#06234eff",
     padding: "2rem",
-    borderRadius: "12px",
+    borderRadius: "0",
     width: "100%",
     maxWidth: "420px",
     boxShadow: "0 10px 25px rgba(19, 15, 15, 0.15)"

@@ -21,6 +21,10 @@ jobs:
           cd backend
           mvn clean package -DskipTests
 
+      - name: login to docker
+        run:  echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+
       - name: Build & Push Backend Image
         run: |
           cd backend
