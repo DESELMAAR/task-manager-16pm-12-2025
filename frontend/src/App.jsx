@@ -61,7 +61,7 @@ const styles = {
     fontFamily: "Arial, sans-serif"
   },
   card: {
-    background: "#112744ff",
+    background: "#355305ff",
     padding: "2rem",
     borderRadius: "0",
     width: "100%",
