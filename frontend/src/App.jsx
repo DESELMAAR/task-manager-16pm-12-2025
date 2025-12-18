@@ -20,6 +20,14 @@ function App() {
     setTitle("");
   };
 
+  const deleteTask = (id) => {
+    axios.delete(`${API}/${id}`)
+      .then(() => {
+        setTasks(tasks.filter(t => t.id !== id));
+      });
+  };
+
+
   return (
     <div style={styles.page}>
       <div style={styles.card}>
@@ -35,12 +43,20 @@ function App() {
           <button style={styles.button} onClick={addTask}>
             Add
           </button>
+
+
         </div>
 
         <ul style={styles.list}>
           {tasks.map(t => (
             <li key={t.id} style={styles.listItem}>
               {t.title}
+              <button
+                style={styles.deleteButton}
+                onClick={() => deleteTask(t.id)}
+              >
+                ❌
+              </button>
             </li>
           ))}
         </ul>
@@ -61,7 +77,7 @@ const styles = {
     fontFamily: "Arial, sans-serif"
   },
   card: {
-    background: "#1b250aff",
+    background: "#2c4206ff",
     padding: "2rem",
     borderRadius: "0",
     width: "100%",
@@ -97,8 +113,24 @@ const styles = {
     padding: 0,
     marginTop: "1rem"
   },
-  listItem: {
-    padding: "0.6rem",
-    borderBottom: "1px solid #eee"
-  }
+  // listItem: {
+  //   padding: "0.6rem",
+  //   borderBottom: "1px solid #eee"
+  // },
+  deleteButton: {
+  background: "transparent",
+  border: "none",
+  color: "#e74c3c",
+  fontSize: "1rem",
+  cursor: "pointer"
+},
+listItem: {
+  padding: "0.6rem",
+  borderBottom: "1px solid #eee",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center"
+}
+
+
 };
