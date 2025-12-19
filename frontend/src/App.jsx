@@ -82,7 +82,7 @@ const styles = {
     borderRadius: "0",
     width: "100%",
     maxWidth: "420px",
-    boxShadow: "0 10px 25px rgba(19, 15, 15, 0.15)"
+    boxShadow: "0 10px 25px rgba(29, 15, 15, 0.15)"
   },
   title: {
     textAlign: "center",

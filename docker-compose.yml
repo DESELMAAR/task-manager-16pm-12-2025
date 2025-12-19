@@ -1,8 +1,7 @@
-version: "3.9"
-
 services:
   backend:
-    image: maarousamad/backend-task-manager:1.0
+    image: maarousamad/backend-task-manager:latest
+    pull_policy: always
     container_name: backend
     ports:
       - "8080:8080"
@@ -12,7 +11,8 @@ services:
       - task-network
 
   frontend:
-    image: maarousamad/frontend-task-manager:1.0
+    image: maarousamad/frontend-task-manager:latest
+    pull_policy: always
     container_name: frontend
     ports:
       - "3000:80"
