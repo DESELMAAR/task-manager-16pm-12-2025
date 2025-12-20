@@ -2,7 +2,7 @@ services:
   backend:
     image: maarousamad/backend-task-manager:latest
     pull_policy: always
-    container_name: backend
+    container_name: backend1
     ports:
       - "8080:8080"
     environment:
@@ -13,7 +13,7 @@ services:
   frontend:
     image: maarousamad/frontend-task-manager:latest
     pull_policy: always
-    container_name: frontend
+    container_name: frontend1
     ports:
       - "3000:80"
     depends_on:
