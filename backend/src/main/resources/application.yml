@@ -8,7 +8,6 @@ spring:
     hibernate:
       ddl-auto: update
 
-
 # spring:
 #   datasource:
 #     url: SPRING_DATASOURCE_URL
