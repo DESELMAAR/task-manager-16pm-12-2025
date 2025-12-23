@@ -11,20 +11,21 @@ services:
     networks:
       - task-network
   frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: http://backend:8080/api
     image: maarousamad/frontend-task-manager:latest
-    pull_policy: always
     ports:
       - "3000:80"
-    environment:
-      VITE_API_URL: ${VITE_API_URL}
     depends_on:
       - backend
     networks:
       - task-network
-networks:
-  task-network:
-    driver: bridge
 
+networks:
+ task-network:
+   driver: bridge
 
 # services:
 #   backend:
