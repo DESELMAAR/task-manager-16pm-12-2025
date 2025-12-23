@@ -5,7 +5,9 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [title, setTitle] = useState("");
 
-  const API = "http://localhost:8080/api/tasks";
+  // const API = "http://localhost:8080/api/tasks";
+  const API = import.meta.env.VITE_API_URL + "/tasks";
+
 
   useEffect(() => {
     axios.get(API).then(res => setTasks(res.data));
